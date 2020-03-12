@@ -1,0 +1,135 @@
+@import "reset";
+
+/*320 * 500*/
+@mixin landscape {
+  @media (min-aspect-ratio: 1/1) {
+    @content;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border: 10px solid #e9cb2f;
+
+  /*background: lightgreen;*/
+  background: url(assets/img/background.png);
+
+  @include landscape {
+    flex-wrap: wrap;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.identity {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  margin: 2vw 5vw 0 5vw;
+}
+.identity__evolution {
+  font-weight: bold;
+  font-size: 0.6em;
+}
+.identity__name {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+.identity__life {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ac6330;
+}
+
+.appearence {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0.5vw 5vw 0 5vw;
+}
+.appearence__image {
+  /*border: 5px solid #bea919;*/
+  background: linear-gradient(130deg, rgba(190, 169, 25, 0.5), rgba(251, 247, 226, 0.8), rgba(190, 169, 25, 0.5) 70.71%),
+    linear-gradient(20deg, rgba(122, 109, 17, 1), rgba(251, 247, 226, 0.5), rgba(122, 109, 17, 1) 70.71%);
+  /*
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+    */
+  padding: 5px;
+}
+.appearence__description {
+  background: linear-gradient(90deg, rgba(190, 169, 25, 0.5), rgba(251, 247, 226, 0.5), rgba(190, 169, 25, 0.5) 90%);
+  margin-top: 1vh;
+  font-size: 0.6em;
+  padding: 2px 4vw;
+  font-style: italic;
+}
+
+.attack {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin: auto 3vw auto 3vw;
+}
+.attack__energy {
+  display: flex;
+
+  img {
+    margin-right: 2vw;
+  }
+}
+.attack__description {
+  margin-right: 3vw;
+  flex-shrink: 20;
+  font-size: 0.9em;
+}
+.attack__description span {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.attack__damage {
+  margin: 0 3vw;
+  font-size: 1.6em;
+}
+
+.statistics {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 0.5vh 3vw;
+  border-top: 2px solid black;
+}
+.statistics__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stat__name {
+  font-size: 0.7em;
+}
+
+.description {
+  /*border: 3px solid #bea919;*/
+  margin: 0 3vw;
+  font-size: 0.6em;
+  padding: 3px;
+  font-style: italic;
+  border-width: 3px;
+  border-style: solid;
+  border-image: linear-gradient(5deg, rgba(190, 169, 25, 0.8), rgba(251, 247, 226, 0.5), rgba(190, 169, 25, 1) 90%) 8;
+
+  span {
+    margin: 0 6px;
+  }
+}
